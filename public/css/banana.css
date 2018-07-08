@@ -1,0 +1,202 @@
+.font-color {
+    color:yellow !important;
+}
+.readmore {
+    color: black;
+}
+.donate {
+    color: black;
+    float: right;
+}
+.mg-auto {
+    margin: auto;
+}
+.main-color {
+    background-color:yellow !important;
+}
+.bg-black {
+    background-color: black;
+    padding: 10px 20px;
+    color: #fff;
+}
+.border {
+    border: solid;
+}
+.bold {
+    font-weight: bold;
+}
+.carousel-inner {
+    height: 500px;
+    object-fit: cover;
+    background-color: grey;
+}
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+.justify {
+    text-align: justify;
+}
+.left {
+    text-align: left;
+}
+.profile {
+    padding: 30px;
+    width: 90%;
+    margin: 20px auto;
+    font-weight: bold;
+}
+.profile-content {
+    max-height: 300px;    
+}
+.profile-head {
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile-img {
+    height: 100px;
+    width: 200px;
+    margin: 10px;
+    float: left;
+}
+.vision-mission {
+    width: 60%;
+    margin: auto;
+}
+ul {
+    list-style-type: none;
+    /* text-align: left !important; */
+}
+.ourteam {
+    margin: auto;
+}
+.ourteam-title {
+    padding: 10px;
+    color:black;
+}
+.campaign {
+    padding: 30px;
+    height: 250px;
+    max-height:800px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 5px;
+    
+}
+.campaign-img {
+    width: 200px;
+    height:120px;
+    float: left;
+    margin: 10px;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+      display: block;
+    }
+  
+    .carousel-inner
+      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner
+      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
+      + .carousel-item,
+    .carousel-inner
+      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
+      + .carousel-item
+      + .carousel-item {
+      transition: none;
+    }
+  
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .carousel-inner
+      .active.carousel-item
+      + .carousel-item
+      + .carousel-item
+      + .carousel-item {
+      position: absolute;
+      top: 0;
+      right: -33.3333%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left
+      + .carousel-item
+      + .carousel-item
+      + .carousel-item {
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+  
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right
+      + .carousel-item
+      + .carousel-item
+      + .carousel-item {
+      position: relative;
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+      display: block;
+      visibility: visible;
+    }
+  }
+.carousel-pd {
+    /* border: solid 1px black; */
+}
+.pro-event {
+    padding: 30px;
+    width: 90%;
+    margin: 20px auto;
+    font-weight: bold;
+}
+.card-body {
+    height: 200px !important;
+    padding: 20px;
+}
+.greys {
+    border: solid 1px rgba(100,100,100, 0.1) !important;
+    border-radius: 10px;
+}
+
+#content {
+  overflow: hidden;
+  height: 10.6em;
+  line-height: 1.2em;
+  width: 100%;
+}
+.carousel-inner {
+    background-color: transparent;
+}

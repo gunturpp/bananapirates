@@ -11,18 +11,42 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function homepageController()
     {
-        return view('home');
+        return view('homepage');
+    }
+    public function profileController()
+    {
+        return view('profile');
+    }
+    public function ourteamController()
+    {
+        return view('our-team');
+    }
+    public function projecteventController()
+    {
+        return view('project-event');
+    }
+    public function blogsController()
+    {
+        return view('blogs');
+    }
+    public function galleryController()
+    {
+        return view('gallery');
+    }
+    public function storeController()
+    {
+        return view('store');
     }
 }
