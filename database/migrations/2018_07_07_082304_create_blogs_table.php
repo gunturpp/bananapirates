@@ -4,29 +4,27 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateBlogsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-
     public function up()
     {
         Schema::defaultStringLength(191);
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('name',50);
-            $table->integer('role');
-            $table->string('password');
-            $table->string('gender',6);
+            $table->integer('fk_userid')->unsigned();
+            $table->string('title',255);
+            $table->longText('content');
             $table->string('pictures',255)->null();
-            $table->string('report_cashflow')->null();
-            $table->rememberToken();
             $table->timestamps();
-        });   
+
+            $table->foreign('fk_userid')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+        });
     }
 
     /**
@@ -36,6 +34,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('blogs');
     }
 }
