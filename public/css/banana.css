@@ -95,84 +95,6 @@ ul {
     margin: 10px;
     display: block;
 }
-
-@media (min-width: 768px) {
-    /* show 3 items */
-    .carousel-inner .active,
-    .carousel-inner .active + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item {
-      display: block;
-    }
-  
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-      + .carousel-item,
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-      + .carousel-item
-      + .carousel-item {
-      transition: none;
-    }
-  
-    .carousel-inner .carousel-item-next,
-    .carousel-inner .carousel-item-prev {
-      position: relative;
-      transform: translate3d(0, 0, 0);
-    }
-  
-    .carousel-inner
-      .active.carousel-item
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
-      position: absolute;
-      top: 0;
-      right: -33.3333%;
-      z-index: -1;
-      display: block;
-      visibility: visible;
-    }
-  
-    /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carousel-item-next.carousel-item-left + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .carousel-item-next.carousel-item-left
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
-      position: relative;
-      transform: translate3d(-100%, 0, 0);
-      visibility: visible;
-    }
-  
-    /* farthest right hidden item must be abso position for animations */
-    .carousel-inner .carousel-item-prev.carousel-item-right {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      display: block;
-      visibility: visible;
-    }
-  
-    /* right or prev direction */
-    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .carousel-item-prev.carousel-item-right
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
-      position: relative;
-      transform: translate3d(100%, 0, 0);
-      visibility: visible;
-      display: block;
-      visibility: visible;
-    }
-  }
 .carousel-pd {
     /* border: solid 1px black; */
 }
@@ -200,3 +122,80 @@ ul {
 .carousel-inner {
     background-color: transparent;
 }
+.blog-home {
+    background-color: gray;
+    text-align: center;
+    height: 400px;
+    margin: 100px auto !important;
+}
+.blog-title {
+    font: 20px;
+    position: absolute;
+    bottom: 0;       
+}
+.people-img {
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+.gallery-home {
+    text-align: center;
+  }
+  .gallery-img {
+    width: 400px;
+    height: 400px;
+  }
+  .gallery-more {
+    float: right;
+    padding: 50px;
+  }
+  .flex {
+    display: flex;
+  }
+  .cashflow-home {
+    margin: 100px;
+    text-align: center;
+  }
+  .cashflow-img {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 0px 20px;
+  }
+  .cashflow-keterangan {
+    text-align: justify;
+  
+  }
+  .cashflow-detail-btn {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 5px;
+    bottom: 0;
+    float: right;
+  }
+  .cashflow-detail {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .testimoni-home {
+    background-color: #000000;
+    padding: 100px;
+  }
+  .testimoni-title {
+    color: #ffffff;
+    float: left;
+  }
+  .testimoni-card {
+      background-color: bisque;
+      width: 100%;
+      height: 200px;
+  }
+  .footer {
+      background-color: grey;
+  }
+  .partnership-container {
+      background-color: goldenrod;
+      padding: none;
+  }

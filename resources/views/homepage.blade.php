@@ -206,12 +206,104 @@
 </div>
 {{-- campaign --}}
 <div class="campaign">
-    <h1>OUR CAMPAIGN</h1>
+    <h1><b>OUR CAMPAIGN</b></h1>
     <img class="campaign-img" src="{{asset('images/blogs/banner.jpg')}}"/>
     <h3><b>Madrasah Kampoeng Cham</b></h3>
     <p>Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum </p>
     <a class="donate" href="">DONATE >></a>
 </div>
+{{-- blog --}}
+<div class="blog-home">
+    <h1><b>BLOG</b></h1><br><br>
+    <div class="container-blogs">
+        <div class="carousel-blogs">
+            <a href="#">
+                <img class="item a" src="{{asset('images/blogs/banner.jpg')}}"/>
+                <p class="blog-title a">Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum </p>
+            </a>
+            <div class="item b">B</div>
+            <div class="item c">C</div>
+            <div class="item d">D</div>
+            <div class="item e">E</div>
+            <div class="item f">F</div>
+        </div>
+            <div class="next-blogs">Next</div>
+            <div class="prev-blogs">Prev</div>
+    </div>
+</div>
+{{-- our gallery --}}
+<div class="gallery-home">
+    <h1><b>OUR GALLERY</b></h1>
+    <div class="flex center">
+        <div class="col-lg-6">
+            <img class="gallery-img" src="{{asset('images/blogs/banner.jpg')}}"/>
+        </div>
+        <div class="col-lg-6">
+            <img class="gallery-img" src="{{asset('images/blogs/banner.jpg')}}"/>
+        </div>
+    </div>
+    <div>
+        <a class="gallery-more" href="#"><b>MORE >></b></a>
+    </div>
+
+</div>
+{{-- laporan keuangan --}}
+<div class="cashflow-home">
+    <h1><b>LAPORAN KEUANGAN</b></h1>
+    <img class="cashflow-img" src="{{asset('images/blogs/banner.jpg')}}"/>
+    <p class="cashflow-keterangan">Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum LorepsumLorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum </p>
+    <div class="cashflow-detail-btn">
+        <a class="cashflow-detail" href="#">LIHAT LAPORAN KEUANGAN</a>
+    </div>
+</div>
+{{-- testimoni --}}
+<div class="testimoni-home">
+    <h1 class="testimoni-title"><b>TESTIMONI</b></h1> 
+    <div id="testimoniCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="flex">
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                    </div>
+              </div>
+              <div class="carousel-item">
+                    <div class="flex">
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                    </div>
+                  </div>
+              <div class="carousel-item">
+                    <div class="flex">
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                        <div class="col-lg-6 testimoni-card">
+                            <img class="people-img" src="{{asset('images/blogs/banner.jpg')}}">
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimoniCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimoniCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>   
+</div>
+@include('layouts/footer')
+        
 <script>
     // readmore
     document.querySelector('button').addEventListener('click', function() {
