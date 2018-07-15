@@ -48,27 +48,21 @@
                 <!-- Right Side Of Navbar -->
 
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('profile') }}">{{ __('PROFILE') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="#visi-misi">{{ __('VISI DAN MISI') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('our-team') }}">{{ __('OUR TEAM') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('project-event') }}">{{ __('PROJECT & EVENT') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('blogs') }}">{{ __('BLOG') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('gallery') }}">{{ __('GALLERY') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-color bold" href="{{ route('store') }}">{{ __('STORE') }}</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-color bold" href="#">
+                            <img class="icon-medsos-blog" src="{{asset('../images/icon/fb.png')}}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-color bold" href="#">
+                            <img class="icon-medsos-blog" src="{{asset('../images/icon/twitter.png')}}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-color bold" href="#">
+                            <img class="icon-medsos-blog" src="{{asset('../images/icon/ig.png')}}">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
