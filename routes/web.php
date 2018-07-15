@@ -30,4 +30,10 @@ Route::get('/store', [
     'as'=>'store'
 ]);
 
+// if admin auth
+Route::get('/dashboard', [
+    'uses'=>'adminController@dashboardController',
+    'as'=>'dashboard'
+]);
+
 Auth::routes();

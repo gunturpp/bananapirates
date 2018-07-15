@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
 <div class="container">
@@ -36,6 +36,22 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <select  id="gender" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="{{ old('gender') }}" required>
+                                <option selected>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                </select>
+                                @if ($errors->has('gender'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('gender') }}</strong>
+                                </span>
+                            @endif
                             </div>
                         </div>
 

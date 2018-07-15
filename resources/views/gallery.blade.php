@@ -34,6 +34,7 @@
     </div>
     {{-- content --}}
     <div class="gallery-content">
+        
     </div>
 </div>
     
