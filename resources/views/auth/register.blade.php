@@ -42,7 +42,7 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                             <div class="col-md-6">
-                                <select  id="gender" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="{{ old('gender') }}" required>
+                                <select  id="gender" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}"   name="gender" value="{{ old('gender') }}" required>
                                 <option selected>Choose...</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
