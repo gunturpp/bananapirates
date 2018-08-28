@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/layout')
 
 @section('content')
 
@@ -6,18 +6,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="pull-right" style="margin-top:15px;">
-                        <a class="btn btn-primary" href="{{ route('event.index') }}">Back</a>
+                        <a class="btn btn-primary" href="{{ route('blog.index') }}">Back</a>
                     </div>
                     <div class="col-lg-12">
-                        <center><h1 class="page-header">Event Data Detail</h1></center>
+                        <center><h1 class="page-header">Blog Data Detail</h1></center>
                     </div>
             </div>
-            <div class="container-fluid">
+            {{-- <div class="container-fluid">
                 <div class="row">
                     <div class="pull-right" style="margin-top:15px;">
                         <a class="btn btn-primary" href="{id}/addCategory">Add Category</a>
                     </div>
-            </div>
+            </div> --}}
             {{--  <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('homestays.index') }}"> Back</a>
             </div>  --}}
@@ -30,87 +30,24 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Event name :</strong>
-                        {{ $events->name_event}}
+                        <strong>Title :</strong>
+                        {{ $blogs->title}}
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Description :</strong>
-                        {{ $events->description}}
+                        <strong>Content :</strong>
+                        {{ $blogs->content}}
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Event date :</strong>
-                        {{ $events->date_event}}
+                        <strong>Picture :</strong>
+                        <img src="{{ URL::to('/') }}/images/blogs/{{$blogs -> pictures}}" style="text-align:center">
                     </div>
                 </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Organizer :</strong>
-                        {{ $events->organizer}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Dance Type :</strong>
-                        {{ $events->dance_type}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Poster :</strong>
-                        <img src="{{ $events -> poster }}" style="height:50px;width:50px;text-align:center">
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>exp :</strong>
-                        {{ $events->exp}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Duration :</strong>
-                        {{ $events->duration}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>rating :</strong>
-                        {{ $events->rating}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Longitude :</strong>
-                        {{ $events->long}}
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Latitude :</strong>
-                        {{ $events->lat}}
-                    </div>
-                </div>       
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Location :</strong>
-                        {{ $events->location}}
-                    </div>
-                </div>       
 
             </div>
         </table>

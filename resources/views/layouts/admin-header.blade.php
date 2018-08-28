@@ -5,24 +5,24 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{asset('bower_components/Ionicons/css/ionicons.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="{{asset('bower_components/morris.js/morris.css')}}">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="{{asset('bower_components/jvectormap/jquery-jvectormap.css')}}">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="{{asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{asset('bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     
@@ -66,13 +66,13 @@
                   <li><a href="{{ route('register') }}">Register</a></li>
                     @else
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                           {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
     
                         <ul class="dropdown-menu">
                           <li>
-                            <a href="{{ route('logout') }}"
+                            <a style="color:#000" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                               Logout
@@ -96,7 +96,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -124,8 +124,9 @@
           </li>
     
           <li>
-            <a href="{{ url('blog') }}">
-              <i class="fa fa-th"></i> <span>Blog</span>
+            <a href="{{ url('admin/blog/index') }}">
+            {{-- <a href="#"> --}}
+                <i class="fa fa-th"></i> <span>Blog</span>
               <!-- <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>
               </span> -->
@@ -133,7 +134,7 @@
           </li>
           
           <li>
-            <a href="{{ url('event-project') }}">
+            <a href="{{ url('admin/eventproject/index') }}">
               <i class="fa fa-th"></i> <span>Event/Project</span>
               <!-- <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>
@@ -141,32 +142,32 @@
             </a>
           </li>
     
-          <li>
-            <a href="{{ url('testimoni') }}">
+          {{-- <li>
+            <a href="{{ url('admin/testimoni') }}">
               <i class="fa fa-th"></i> <span>Testimoni</span>
               <!-- <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>
               </span> -->
             </a>
-          </li>
+          </li> --}}
           
-          <li>
-            <a href="{{ url('achievement') }}">
+          {{-- <li>
+            <a href="{{ url('admin/achievement') }}">
               <i class="fa fa-th"></i> <span>Achievement</span>
               <!-- <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>
               </span> -->
             </a>
-          </li>
+          </li> --}}
           
-          <li>
-            <a href="{{ url('kehadiran') }}">
+          {{-- <li>
+            <a href="{{ url('admin/kehadiran') }}">
               <i class="fa fa-th"></i> <span>Kehadiran Event</span>
               <!-- <span class="pull-right-container">
                 <small class="label pull-right bg-green">new</small>
               </span> -->
             </a>
-          </li>
+          </li> --}}
     
       </section>
       <!-- /.sidebar -->

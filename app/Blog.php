@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Blog extends Model
 {
     protected $table = 'blogs';
     /**
@@ -16,6 +16,7 @@ class Event extends Model
         'title',
         'content',
         'pictures',
+        'fk_userid'
     ];
 
     /**

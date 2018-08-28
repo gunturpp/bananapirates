@@ -32,7 +32,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo-banana" src="{{asset('../images/icon/logo-banana.png')}}">
                 </a>

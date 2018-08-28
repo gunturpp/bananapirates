@@ -16,7 +16,7 @@ class BlogsController extends Controller
     {   
         // harus role admin
         $this->middleware('auth');
-    }
+    }   
     /**
      * Display a listing of the resource.
      *
@@ -56,14 +56,14 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
+        $id_user = Auth::id();
         request()->validate([
             'title' => 'required|max:100|string',
             'content' => 'required|max:10000|string',
             'pictures' => 'required',
             
             ]);
-            $data = $request->only('title', 'content', 'pictures');
+            $data = $request->only('title', 'content', 'pictures','fk_userid');
             // $data = $request->except(['image']);
             $pictures = "";
             if ($request->hasFile('pictures')){ //has file itu meminta nama databasenya bukan classnya
@@ -72,13 +72,13 @@ class BlogsController extends Controller
                 $fileName = str_random(40) . '.' . $file->guessClientExtension();;
                 $getPath = 'http://127.0.0.1:8000/bananapirates/public/img/' . $fileName;
                 $destinationPath = "images/blog";
-                $data['pictures'] = '../'. $destinationPath . '/' . $fileName;
+                $data['pictures'] = $fileName;
                 $file -> move($destinationPath, $getPath,$fileName);
                 $photo1 = $fileName;
                 // return $getPath;
             }
-
-        blog::create($data);
+            $data['fk_userid'] = $id_user; 
+        Blog::create($data);
         return redirect()->route('blog.index')
             ->with('success','New blog has been created successfully');
     }
@@ -90,9 +90,10 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        $blogs = blog::find($id);
+        $blogs = Blog::find($id);
         // $justId = $blogs->id;
         // $this->addCategory($justId);
+        // dd($blogs);
         return view('blog.show',compact('blogs'));
     }
 
@@ -104,7 +105,7 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        $blogs = blog::find($id);
+        $blogs = Blog::find($id);
         return view('blog.edit',compact('blogs'));
     }
 
@@ -133,14 +134,14 @@ class BlogsController extends Controller
                 $fileName = str_random(40) . '.' . $file->guessClientExtension();;
                 // $getPath = 'http://127.0.0.1:8000/nareeadmin/public/img/' . $fileName;
                 $destinationPath = "images/blog";
-                $data['pictures'] = '../'. $destinationPath . '/' . $fileName;
+                $data['pictures'] = $fileName;
                 $file -> move($destinationPath,$fileName);
 
     
             }
 
 
-        blog::find($id)->update($data);
+        Blog::find($id)->update($data);
         return redirect()->route('blog.index')
             ->with('success','New blog has been created successfully');
     }
@@ -153,7 +154,7 @@ class BlogsController extends Controller
      */
     public function destroy($id)
     {
-        blog::find($id)->delete();
+        Blog::find($id)->delete();
         return redirect()->route('blog.index')
                         ->with('success','blog has been deleted successfully');
     }

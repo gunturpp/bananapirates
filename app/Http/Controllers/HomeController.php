@@ -3,50 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
+use App\User;
+use App\Blog;
+use App\Eventproject;
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function homepageController()
     {
-        return view('homepage');
+        $blogs = Blog::all();
+        $eventprojects = Eventproject::all();
+        // dd($blogs);
+        return view('homepage', compact('blogs', 'eventprojects'));
     }
     public function profileController()
     {
-        return view('profile');
+        return view('userside/profile/profile');
     }
     public function ourteamController()
     {
-        return view('our-team');
+        return view('userside/ourteam/our-team');
     }
     public function projecteventController()
     {
-        return view('project-event');
+        return view('userside/projectevent/project-event');
     }
     public function blogsController()
     {
-        return view('blogs');
+        $blogs = DB::table('blogs')->latest()->paginate(5);
+        return view('userside/blog/blogs',compact('blogs'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+    public function blogDetailController($id)
+    {
+        $blogDetail = Blog::find($id);
+        $writter = User::find($blogDetail->fk_userid);
+        return view('userside/blog/detail',compact('blogDetail','writter'));
+
     }
     public function galleryController()
     {
-        return view('gallery');
+        return view('userside/gallery/gallery');
     }
     public function storeController()
     {
-        return view('store');
+        return view('userside/store');
     }
 }

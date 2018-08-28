@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Eventproject;
+use App\Blog;
+use DB;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -24,6 +28,15 @@ class AdminController extends Controller
     
     public function dashboardController()
     {
-        return view('admin/dashboard');
+        $user = Auth::user();
+		if($user->role=='1'){
+            $blogs = DB::table('blogs')->count();
+            $event_projects = DB::table('event_projects')->count();
+        }
+        else {
+            return 'kamu bukan admin :p';
+            
+        }
+        return view('admin/dashboard', compact('blogs','event_projects'));        
     }
 }

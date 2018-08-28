@@ -11,17 +11,26 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active carousel-img">
-        <img class="d-block w-100" src="{{asset('../images/blogs/banner.jpg')}}" alt="First slide">
-        <div class="carousel-caption d-none d-md-block right">
-                <h1><b>Lorepsum Lorepsum Lorepsum Lorepsum</b></h1>
-                <p> Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum</p>
-              </div>
+        <img class="d-block w-100" src="{{ URL::to('/') }}/images/blogs/{{$blogs[0] -> pictures}}" alt="First slide">
+          <div class="carousel-caption d-none d-md-block right">
+              <h1><b>{{$blogs[0]->title}}</b></h1>
+            {{-- <p>{{$blogs[0]->content}}</p> --}}
+          </div>
         </div>
         <div class="carousel-item carousel-img">
-        <img class="d-block w-100" src="{{asset('images/blogs/banner.jpg')}}" alt="Second slide">
+        <img class="d-block w-100" src="{{ URL::to('/') }}/images/blogs/{{$blogs[1] -> pictures}}" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block right">
+            <h1><b>{{$blogs[1]->title}}</b></h1>
+            {{-- <p>{{$blogs[1]->content}}</p> --}}
+          </div>
         </div>
         <div class="carousel-item carousel-img">
-        <img class="d-block w-100" src="{{asset('images/blogs/banner.jpg')}}" alt="Third slide">
+        <img class="d-block w-100" src="{{ URL::to('/') }}/images/blogs/{{$blogs[2] -> pictures}}" alt="Third slide">
+          <div style="z-index:10" class="carousel-caption d-none d-md-block right">
+            <h1><b>{{$blogs[2]->title}}</b></h1>
+            {{-- <p>{{$blogs[2]->content}}</p> --}}
+          </div>
+    
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

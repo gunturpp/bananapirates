@@ -24,9 +24,8 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-            {{-- <h3>{{$users}}</h3> --}}
-            <h3>Guntur</h3>
-              <p>Total Pengguna</p>
+            <h3>{{$blogs}}</h3>
+              <p>Total Blog</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -39,12 +38,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-            {{-- <h3>{{$events}}</h3> --}}
-            <h3>event</h3>
-
-            <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
-            
-              <p>Total Event</p>
+              <h3>{{$event_projects}}</h3>
+              <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
+              <p>event/project</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -58,9 +54,9 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               {{-- <h3>{{$news}}</h3> --}}
-              <h3>newzz</h3>
+              <h3>None</h3>
 
-              <p>Total Berita</p>
+              <p>None</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -74,9 +70,9 @@
           <div class="small-box bg-red">
             <div class="inner">
                 {{-- <h3>{{$advertisements}}</h3> --}}
-                <h3>adsssz</h3>
+                <h3>None</h3>
 
-              <p>Total Iklan</p>
+              <p>None</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -90,9 +86,9 @@
           <div class="small-box bg-red">
             <div class="inner">
               {{-- <h3>{{$feedbacks}}</h3> --}}
-              <h3>feedbacks}}</h3>
+              <h3>None</h3>
 
-              <p>Total Komentar</p>
+              <p>None</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -109,7 +105,8 @@
           <h1 style="border-bottom:solid 1px;text-align:center">Create something here</h1>
             <div class="inner" style="text-align:center">
                 {{-- <a class="btn btn-success" href="{{ route('event.create') }}"> Create New Event</a> --}}
-                <a class="btn btn-success" href="#"> Create New Event</a>
+                <a class="btn btn-success" href="{{ route('blog.create') }}">Create New Blog</a>
+                <a class="btn btn-success" href="{{ route('eventproject.create') }}">Create New Event/Project</a>
             </div>
             <br>
 

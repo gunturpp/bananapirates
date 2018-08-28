@@ -22,6 +22,9 @@
 .border {
     border: solid;
 }
+.border-btm {
+    border-bottom: solid #dddddd;
+}
 .bold {
     font-weight: bold;
 }
@@ -196,6 +199,10 @@ ul {
 .footer {
     background-color: grey;
 }
+.medsos {
+    display:inline-flex;
+    
+}
 .partnership-container {
     background-color: goldenrod;
     padding: none;
@@ -250,19 +257,29 @@ ul {
     margin: 10px;
 }
 .blogs-card {
-    padding: 10px;
-    margin: 80px;
+    width: 100vw;
+    padding: 10px 0px;
+    margin-top: 60px;
     display: flex;
 }
 .blogs-content {
     display: block;
     overflow: hidden;
-    height: 140px;
+    height: 130px;
 }
 .blogs-right-content {
     height: 300px;
     padding: 30px;
     background-color: grey;
+}
+.blog-detail {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.blog-img {
+    width: 800px;
+    height: auto;
+
 }
 .category-list {
     max-width: 70%;
@@ -323,4 +340,35 @@ ul {
 .store-list-img {
     height: 100px;
     width: 100px;
+}
+.title {
+    font-size:1.4em;
+}
+.content {
+    text-align: justify;
+}
+@media only screen and (max-width: 320px) {
+    .blog-img {
+        width: 150px;
+        height: auto;
+    }
+    .blogs-card {
+        width: 100vw;
+    }
+    .blog-detail {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .content {
+        text-align: left;
+    }        
+}
+@media only screen and (max-width: 640px) and (min-width: 426px) {
+    .blog-img {
+        width: 400px;
+        height: auto;
+    }
+    .blogs-card {
+        width: 100vw;
+    }
 }

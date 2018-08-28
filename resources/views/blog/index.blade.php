@@ -22,8 +22,8 @@
                         <h2>blog list</h2>
                     </div>
                     <div class="pull-right">
-                        {{-- <a class="btn btn-success" href="{{ route('blog.create') }}"> Create New blog</a> --}}
-                        <a class="btn btn-success" href="#"> Create New blog</a>
+                        <a class="btn btn-success" href="{{ route('blog.create') }}"> Create New blog</a>
+                        {{-- <a class="btn btn-success" href="#"> Create New blog</a> --}}
                     </div>
                 </div>
             </div>
@@ -38,22 +38,16 @@
                 <tr>
                     <th>No</th>
                     <th>title</th>
+                    <th>picture</th>
                     <th>content</th>
-                    <th>Deskripsi blog</th>
-                    <th>rating</th>
-                    <th>Latitude</th>
-                    <th>Latitude</th>
                     <th width="280px">Action</th>
                 </tr>
             @foreach($blogs as $blog)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $blog->name_blog}}</td>
-                <td><img src="{{ $blog -> poster }}" style="height:50px;width:50px;text-align:center"></td>
-                <td>{{ $blog->description}}</td>
-                <td>{{ $blog->rating}}</td>
-                <td>{{ $blog->lat}}</td>
-                <td>{{ $blog->long}}</td>
+                <td>{{ $blog->title}}</td>
+                <td><img src="{{ URL::to('/') }}/images/blogs/{{ $blog -> pictures }}" style="height:50px;width:50px;text-align:center"></td>
+                <td>{{ $blog->content}}</td>
                 <td>
                     <a class="btn btn-info" href="{{ route('blog.show',$blog->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('blog.edit',$blog->id) }}">Edit</a>

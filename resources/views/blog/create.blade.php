@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('content')
 
@@ -6,10 +6,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="pull-right" style="margin-top:15px;">
-                        <a class="btn btn-primary" href="{{ route('event.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('blog.index') }}"> Back</a>
                     </div>
                     <div class="col-lg-12">
-                        <center><h1 class="page-header">Create Event Data</h1></center>
+                        <center><h1 class="page-header">Create Blog Data</h1></center>
                     </div>
             </div>
             {{--  <div class="pull-right">
@@ -20,8 +20,8 @@
 
     <div style="width: 80%; margin: auto;">
       	<table class="table centered">
-            {!! Form::open(['route' => 'event.store','method'=>'POST','files'=>true]) !!}
-                @include('event.form')
+            {!! Form::open(['route' => 'blog.store','method'=>'POST','files'=>true]) !!}
+                @include('blog.form')
             {!! Form::close() !!}
         </table>
     </div>
