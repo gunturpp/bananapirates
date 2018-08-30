@@ -19,6 +19,11 @@
     </div>
 
     <div style="width: 80%; margin: auto;">
+        <div style="text-align:center">
+            <img style="width:500px" src="{{ URL::to('/') }}/images/eventproject/{{$event_projects->pictures}}">
+        </div>
+        <br>
+        
       	<table class="table centered">
             {!! Form::model($event_projects, ['method' => 'PATCH','route' => ['eventproject.update', $event_projects->id], 'files'=>true]) !!}
                 @include('eventproject.form')

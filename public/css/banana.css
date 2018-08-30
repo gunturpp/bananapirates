@@ -216,6 +216,11 @@ ul {
     object-fit: cover;
     width: 100%;
 }
+.eventproject-banner {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
 .profile-mg {
     margin: 100px auto;
     padding: 30px;
@@ -268,7 +273,7 @@ ul {
     height: 130px;
 }
 .blogs-right-content {
-    height: 300px;
+    height: auto;
     padding: 30px;
     background-color: grey;
 }

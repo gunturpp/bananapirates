@@ -35,7 +35,6 @@ class EventprojectController extends Controller
         $event_projects = DB::table('event_projects')->latest()->paginate(5);
         return view('eventproject.index',compact('event_projects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-
     }
 
     /**
@@ -123,10 +122,9 @@ class EventprojectController extends Controller
         request()->validate([
             'title' => 'required|max:100|string',
             'content' => 'required|max:10000|string',
-            'pictures' => 'required',
             'link_registration'=>'required'
             ]);
-            $data = $request->only('title', 'content', 'pictures','link_registration');
+            $data = $request->only('title', 'content','link_registration');
             
             // $data = $request->except(['image']);
             $pictures = "";

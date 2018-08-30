@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Query\Builder;
 use DB;
-use App\Blog;
+use App\Campaign;
 
-class BlogsController extends Controller
+class CampaignController extends Controller
 {
     
     public function __construct()
@@ -24,16 +24,16 @@ class BlogsController extends Controller
      */
     public function index()
     {	
-        $user = Auth::user();
-		if($user->role=='1'){
-			$blogs = DB::table('blogs')->count();
-        }
-        else {
-            return 'kamu bukan staff banana pirates';
-        }
+        // $user = Auth::user();
+		// if($user->role=='1'){
+		// 	$campaigns = DB::table('campaigns')->count();
+        // }
+        // else {
+        //     return 'kamu bukan staff banana pirates';
+        // }
         // $newss = News::latest()->paginate(5);
-        $blogs = DB::table('blogs')->latest()->paginate(5);
-        return view('blog.index',compact('blogs'))
+        $campaigns = DB::table('campaigns')->latest()->paginate(5);
+        return view('campaign.index',compact('campaigns'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
@@ -45,7 +45,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return view('campaign.create');
     }
 
     /**
@@ -58,12 +58,13 @@ class BlogsController extends Controller
     {
         $id_user = Auth::id();
         request()->validate([
-            'title' => 'required|max:100|string',
+            'campaign_name' => 'required|max:255|string',
             'content' => 'required|max:10000|string',
             'pictures' => 'required',
+            'hyperlink' => 'required'
             
             ]);
-            $data = $request->only('title', 'content', 'pictures','fk_userid');
+            $data = $request->only('campaign_name', 'content', 'pictures','fk_userid','hyperlink');
             // $data = $request->except(['image']);
             $pictures = "";
             if ($request->hasFile('pictures')){ //has file itu meminta nama databasenya bukan classnya
@@ -71,16 +72,16 @@ class BlogsController extends Controller
                 $file = $request->pictures;
                 $fileName = str_random(40) . '.' . $file->guessClientExtension();;
                 $getPath = 'http://127.0.0.1:8000/bananapirates/public/img/' . $fileName;
-                $destinationPath = "images/blog";
+                $destinationPath = "images/campaign";
                 $data['pictures'] = $fileName;
                 $file -> move($destinationPath, $getPath,$fileName);
                 $photo1 = $fileName;
                 // return $getPath;
             }
             $data['fk_userid'] = $id_user; 
-        Blog::create($data);
-        return redirect()->route('blog.index')
-            ->with('success','New blog has been created successfully');
+        Campaign::create($data);
+        return redirect()->route('campaign.index')
+            ->with('success','New campaign has been created successfully');
     }
     /**
      * Display the specified resource.
@@ -90,11 +91,11 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        $blogs = Blog::find($id);
-        // $justId = $blogs->id;
+        $campaigns = Campaign::find($id);
+        // $justId = $campaigns->id;
         // $this->addCategory($justId);
-        // dd($blogs);
-        return view('blog.show',compact('blogs'));
+        // dd($campaigns);
+        return view('campaign.show',compact('campaigns'));
     }
 
     /**
@@ -105,8 +106,8 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        $blogs = Blog::find($id);
-        return view('blog.edit',compact('blogs'));
+        $campaigns = Campaign::find($id);
+        return view('campaign.edit',compact('campaigns'));
     }
 
     /**
@@ -120,10 +121,11 @@ class BlogsController extends Controller
     {
         $user = Auth::user();
         request()->validate([
-            'title' => 'required|max:100|string',
+            'campaign_name' => 'required|max:255|string',
             'content' => 'required|max:10000|string',
+            'hyperlink'=>'required'
             ]);
-            $data = $request->only('title', 'content');
+            $data = $request->only('campaign_name', 'content','hyperlink');
             
             // $data = $request->except(['image']);
             $pictures = "";
@@ -132,7 +134,7 @@ class BlogsController extends Controller
                 $file = $request->pictures;
                 $fileName = str_random(40) . '.' . $file->guessClientExtension();;
                 // $getPath = 'http://127.0.0.1:8000/nareeadmin/public/img/' . $fileName;
-                $destinationPath = "images/blog";
+                $destinationPath = "images/campaign";
                 $data['pictures'] = $fileName;
                 $file -> move($destinationPath,$fileName);
 
@@ -140,9 +142,9 @@ class BlogsController extends Controller
             }
 
 
-        Blog::find($id)->update($data);
-        return redirect()->route('blog.index')
-            ->with('success','New blog has been created successfully');
+        Campaign::find($id)->update($data);
+        return redirect()->route('campaign.index')
+            ->with('success','New campaign has been created successfully');
     }
 
     /**
@@ -153,8 +155,8 @@ class BlogsController extends Controller
      */
     public function destroy($id)
     {
-        Blog::find($id)->delete();
-        return redirect()->route('blog.index')
-                        ->with('success','blog has been deleted successfully');
+        Campaign::find($id)->delete();
+        return redirect()->route('campaign.index')
+                        ->with('success','campaign has been deleted successfully');
     }
 }

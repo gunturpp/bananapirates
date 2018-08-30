@@ -107,25 +107,39 @@
             <div class="greys carousel-inner row w-100 mx-auto">
                 {{-- card list --}}
                 <div class="carousel-item col-md-4 active">
-                        <div class="card">
-                            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f4f141/fff" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="card-content">
-                                    <p id="content" class="card-text">
-                                        Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum 
-                                        Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum 
-                                        Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum 
-                                        Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum 
-                                        Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <a class="readmore" href="#">READ MORE >>&nbsp;&nbsp;&nbsp; </a>
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="{{ URL::to('/') }}/images/eventproject/{{$eventprojects[0]->pictures}}" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-content">
+                                <p id="content" class="card-text">
+                                    {{$eventprojects[0]->content}}
+                                </p>
                             </div>
                         </div>
+                        <div class="right">
+                            <a class="readmore" href="{{ URL::to('/') }}/projectevent/detail/{{$eventprojects[0]->id}}">READ MORE >>&nbsp;&nbsp;&nbsp; </a>
+                        </div>
                     </div>
+                </div>
+                @foreach ($eventprojects as $ev )
                 <div class="carousel-item col-md-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="{{ URL::to('/') }}/images/eventproject/{{$ev->pictures}}" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-content">
+                                <p id="content" class="card-text">
+                                    {{$ev->content}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <a class="readmore" href="{{ URL::to('/') }}/projectevent/detail/{{$ev->id}}">READ MORE >>&nbsp;&nbsp;&nbsp; </a>
+                        </div>
+                    </div>
+                </div>
+    
+                @endforeach
+                {{-- <div class="carousel-item col-md-4">
                     <div class="card">
                         <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f4f141/fff" alt="Card image cap">
                         <div class="card-body">
@@ -200,7 +214,7 @@
                             <a class="readmore" href="#">READ MORE >>&nbsp;&nbsp;&nbsp; </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -216,10 +230,13 @@
 {{-- campaign --}}
 <div class="campaign">
     <h1><b>OUR CAMPAIGN</b></h1>
+    @foreach ($campaigns as $camp )
+        
+    @endforeach
     <img class="campaign-img" src="{{asset('images/blogs/banner.jpg')}}"/>
-    <h3><b>Madrasah Kampoeng Cham</b></h3>
-    <p>Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum Lorepsum </p>
-    <a class="donate" href="">DONATE >></a>
+    <h3><b>{{$camp->campaign_name}}</b></h3>
+    <p>{{$camp->content}}</p>
+    <a class="donate" href="https://{{$camp->hyperlink}}">DONATE >></a>
 </div>
 {{-- blog --}}
 <div class="blog-home">

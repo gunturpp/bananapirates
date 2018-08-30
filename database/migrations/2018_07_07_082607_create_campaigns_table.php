@@ -17,10 +17,9 @@ class CreateCampaignsTable extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fk_userid')->unsigned();
-            $table->string('campaign_nae',255);
+            $table->string('campaign_name',255);
             $table->longText('content',255);
             $table->string('hyperlink',255);
-            $table->string('long',255);
             $table->string('pictures',255)->null();
             $table->timestamps();
 

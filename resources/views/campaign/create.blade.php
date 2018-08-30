@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 
 @section('content')
 
@@ -6,10 +6,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="pull-right" style="margin-top:15px;">
-                        <a class="btn btn-primary" href="{{ route('blog.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('campaign.index') }}"> Back</a>
                     </div>
                     <div class="col-lg-12">
-                        <center><h1 class="page-header">Edit Blog Data</h1></center>
+                        <center><h1 class="page-header">Create Campaign Data</h1></center>
                     </div>
             </div>
             {{--  <div class="pull-right">
@@ -19,13 +19,9 @@
     </div>
 
     <div style="width: 80%; margin: auto;">
-        <div style="text-align:center">
-            <img style="width:500px" src="{{ URL::to('/') }}/images/blogs/{{$blogs->pictures}}">
-        </div>
-        <br>
       	<table class="table centered">
-            {!! Form::model($blogs, ['method' => 'PATCH','route' => ['blog.update', $blogs->id], 'files'=>true]) !!}
-                @include('blog.form')
+            {!! Form::open(['route' => 'campaign.store','method'=>'POST','files'=>true]) !!}
+                @include('campaign.form')
             {!! Form::close() !!}
         </table>
     </div>
